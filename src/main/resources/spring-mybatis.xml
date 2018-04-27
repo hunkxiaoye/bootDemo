@@ -24,6 +24,7 @@
                 <value>classpath:kafka.properties</value>
                 <value>classpath:log4j2.properties</value>
                 <value>classpath:es.properties</value>
+                <value>classpath:jdbc.properties</value>
             </list>
         </property>
     </bean>
@@ -52,9 +53,36 @@
 
     <!-- Redis 结束-->
 
-    <!-- 配置基于注解的声明式事务 -->
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+    <!-- 数据库连接池 -->
+    <bean id="dataSourceA" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${A.jdbc.driver}"/>
+        <property name="jdbcUrl" value="${A.jdbc.url}"/>
+        <property name="user" value="${A.jdbc.username}"/>
+        <property name="password" value="${A.jdbc.password}"/>
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>
+        <property name="minPoolSize" value="${c3p0.minPoolSize}"/>
+        <property name="autoCommitOnClose" value="${c3p0.autoCommitOnClose}"/>
+        <property name="checkoutTimeout" value="${c3p0.checkoutTimeout}"/>
+        <property name="acquireRetryAttempts" value="${c3p0.acquireRetryAttempts}"/>
+    </bean>
 
+
+    <!-- 配置SqlSessionFactory对象 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceA"/>
+        <property name="typeAliasesPackage" value="com.bootdemo.model"/>
+        <!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    </bean>
+
+
+    <!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入sqlSessionFactory -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!-- 给出需要扫描Dao接口包 -->
+        <property name="basePackage" value="com.bootdemo.dao"/>
+    </bean>
 
 
 </beans>
