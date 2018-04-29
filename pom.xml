@@ -210,7 +210,7 @@
                             <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/main/resources/${package.environment}</directory>
+                                    <directory>src/main/resources/properties/${package.environment}</directory>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
