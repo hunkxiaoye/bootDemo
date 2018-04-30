@@ -18,30 +18,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
-//@MapperScan("com.bootdemo.dao")
 @ImportResource(locations={"classpath:spring-mvc.xml","classpath:spring-mybatis.xml"})
+@MapperScan("com.bootdemo")
 public class Application {
-    private static Logger log = LogManager.getLogger(Application.class);
 
-//    @Bean
-//    @ConfigurationProperties(prefix="spring.datasource.bootdemo-db")
-//    public DataSource dataSource() {
-//        return new org.apache.tomcat.jdbc.pool.DataSource();
-//    }
-//
-//    @Bean
-//    public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
-//        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-//        sqlSessionFactoryBean.setDataSource(dataSource());
-//        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-//        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mapper/*.xml"));
-//        return sqlSessionFactoryBean.getObject();
-//    }
-//
-//    @Bean
-//    public PlatformTransactionManager transactionManager() {
-//        return new DataSourceTransactionManager(dataSource());
-//    }
+    private static Logger log = LogManager.getLogger(Application.class);
 
 
     /**
