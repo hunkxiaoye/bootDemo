@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         //获取url地址
         String url = request.getServletPath();
-        if (url.endsWith("login") || url.endsWith("loginVerify")) {
+        if (url.endsWith("login") || url.endsWith("error") || url.endsWith("loginVerify")) {
             return true;
         }
         if (!CookieUtils.isLogin(request)) {
