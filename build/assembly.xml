@@ -6,7 +6,7 @@
         <format>tar.gz</format>
         <format>dir</format>
     </formats>
-    <!--<files>-->
+    <files>
     <!--<file>-->
     <!--<source>build/build.json</source>-->
     <!--<outputDirectory></outputDirectory>-->
@@ -17,13 +17,23 @@
     <!--<outputDirectory></outputDirectory>-->
     <!--<filtered>true</filtered>-->
     <!--</file>-->
-    <!--</files>-->
-    <!--<fileSets>
+    </files>
+    <fileSets>
         <fileSet>
-            <directory>src/main/resources</directory>
-            <outputDirectory></outputDirectory>
+            <directory>target/classes</directory>
+            <outputDirectory>conf</outputDirectory>
+            <includes>
+                <include>*.properties</include>
+            </includes>
         </fileSet>
-    </fileSets>-->
+        <fileSet>
+            <directory>bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+    </fileSets>
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>true</useProjectArtifact>
