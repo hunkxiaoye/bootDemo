@@ -18,12 +18,12 @@
     <Loggers>
 
         <!--记录 qg.fangrui.boot 包及其子包 debug 及其以上的记录，并输出到文件中-->
-        <Logger name="com.bootdemo" level="debug">
+        <Logger name="com.bootdemo" level="info">
             <!-- AppenderRef 可以控制文件输出对象-->
             <AppenderRef ref="File" />
         </Logger>
         <!--根记录全部输出到控制台上-->
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="Console" />
         </Root>
     </Loggers>
