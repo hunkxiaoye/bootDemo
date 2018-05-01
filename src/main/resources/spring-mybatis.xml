@@ -13,7 +13,6 @@
             <list>
                 <value>classpath:redis.properties</value>
                 <value>classpath:kafka.properties</value>
-                <value>classpath:log4j2.properties</value>
                 <value>classpath:es.properties</value>
                 <value>classpath:jdbc.properties</value>
             </list>
