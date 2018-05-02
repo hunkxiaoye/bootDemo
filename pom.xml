@@ -41,23 +41,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-velocity</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-        <!--</dependency>-->
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
         <!--springboot配置结束-->
         <!--ssm配置-->
         <dependency>
@@ -106,21 +89,6 @@
             <version>2.5.0</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.velocity</groupId>-->
-            <!--<artifactId>velocity</artifactId>-->
-            <!--<version>1.7</version>-->
-        <!--</dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity-tools -->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.velocity</groupId>-->
-            <!--<artifactId>velocity-tools</artifactId>-->
-            <!--<version>2.0</version>-->
-        <!--</dependency>-->
-
         <!--Es 开始-->
         <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
         <dependency>
@@ -166,7 +134,6 @@
             <version>1.2.47</version>
         </dependency>
         <!--fastjson  结束-->
-
 
         <dependency>
             <groupId>org.projectlombok</groupId>
